@@ -1,0 +1,20 @@
+.l-contact {
+    &__card {
+        @include rwd-padding($s10, $s4);
+        background-color: #fff;
+        border-radius: $s4;
+    }
+    &__btn {
+        color: #fff !important;
+        background-color: #00b84f;
+        border: 1px solid #00b84f;
+        &:hover {
+            background-color: darken($color: #00b84f, $amount: 5);
+            border: 1px solid darken($color: #00b84f, $amount: 5);
+        }
+        .icon-line-c::before {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+    }
+}

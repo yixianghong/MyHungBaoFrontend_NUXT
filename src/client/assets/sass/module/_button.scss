@@ -1,0 +1,41 @@
+//tag
+@each $color, $value in $theme-colors {
+    .tag-#{$color} {
+        @include button-tag-variant(rgba($value, 0.2), $value);
+    }
+}
+
+//link
+@each $color, $value in $theme-colors {
+    .btn-link-#{$color} {
+        @include button-btnlink-variant($value);
+    }
+}
+.btn-link {
+    &:hover {
+        border-color: transparent !important;
+        opacity: 80%;
+    }
+}
+//btn
+.btn {
+    &-lg {
+        @include font(1rem, 400, 150%);
+        @include rwd-padding($s3 $s6, $s1 $s3);
+        @include rwd-radius($s1);
+    }
+    //normal
+    @include rwd-padding($s2 $s6, $s1 $s3);
+    @include rwd-radius($s1);
+    @include font(1rem, 400, 150%);
+    &-sm {
+        @include font(0.875rem, 400, 100%);
+        @include rwd-padding($s1 $s2);
+        border-radius: $s1;
+    }
+    &-xs {
+        @include font(0.75rem, 400, 100%);
+        @include rwd-padding($s1 $s2);
+        border-radius: $s1;
+    }
+}

@@ -1,0 +1,37 @@
+.card.active {
+    background-color: rgba($primary, 0.1);
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: var(--#{$prefix}card-img-overlay-padding);
+    @include border-radius(var(--#{$prefix}card-inner-border-radius));
+    background: rgba(#000, 0.4);
+}
+
+.float-card {
+    @include rwd-padding($s10, $s6);
+    @include rwd-margin(0 auto);
+    background-color: #fff;
+    border-radius: $s2;
+    box-shadow: 0px 4px 10px #00000010;
+    width: calc(100% - 48px);
+    &.checkout {
+        max-width: 600px;
+    }
+    &.cart {
+        max-width: 1320px;
+    }
+    &.store {
+        @include flex(row, flex-start, stretch, column, flex-start, stretch);
+        margin-top: -80px;
+        padding: 40px 0;
+        @include mobile() {
+            margin-top: -40px;
+        }
+    }
+}

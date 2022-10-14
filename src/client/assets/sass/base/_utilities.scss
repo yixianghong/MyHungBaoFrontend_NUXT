@@ -1,0 +1,78 @@
+// 新增自訂的RWD Class
+// 1.font-size 字體大小
+//   前綴 fs / 裝置 xs.md.lg.xl.xxl / 數值 1~6
+//   ex: fs-6 fs-md-4 (手機版font-size:6 ; 平板以上4)
+// 2.width 寬度
+//   前綴 w / 裝置 xs.md.lg.xl.xxl / 數值:10｜15｜20｜25...｜100
+//   ex: w-100 w-md-50 (手機版width:100% ; 平板以上50%)
+
+// 新增自訂的 段落對齊與行距Class
+// 1.text-align 段落對齊
+//   前綴 text / 數值 start｜end｜center｜justify (段落靠左｜段落靠右｜段落置中｜左右對齊)
+//   ex: text-start
+// 2.line-height 行距
+//   前綴 lh / 數值 1｜sm｜base｜lg (預設 1=100%｜sm=150%｜base=175%｜lg=200%)
+//   ex: lh-sm
+
+$utilities: map-merge(
+    $utilities,
+    (
+        "font-size": (
+            rfs: true,
+            property: font-size,
+            responsive: true,
+            class: fs,
+            values: $font-sizes,
+        ),
+        "width": (
+            property: width,
+            responsive: true,
+            class: w,
+            values: (
+                10: 10%,
+                15: 15%,
+                20: 20%,
+                25: 25%,
+                30: 30%,
+                35: 35%,
+                40: 40%,
+                45: 45%,
+                50: 50%,
+                55: 55%,
+                60: 60%,
+                70: 70%,
+                75: 75%,
+                80: 80%,
+                85: 85%,
+                90: 90%,
+                95: 95%,
+                100: 100%,
+                auto: auto,
+            ),
+        ),
+        "text-align": (
+            responsive: true,
+            property: text-align,
+            class: text,
+            values: (
+                start: left,
+                end: right,
+                center: center,
+                justify: justify,
+            ),
+        ),
+        "line-height": (
+            property: line-height,
+            class: lh,
+            values: (
+                1: 1,
+                sm: $line-height-sm,
+                //1.5
+                base: $line-height-base,
+                //1.75
+                lg: $line-height-lg,
+                //2
+            ),
+        ),
+    )
+);

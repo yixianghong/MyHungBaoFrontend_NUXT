@@ -1,0 +1,58 @@
+// 紅包製作流程
+.l {
+    &-index {
+        &__process {
+            &-item {
+                @include flex(column, center, center);
+                @include mobile() {
+                    width: 50%;
+                }
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(4) {
+                    .l-index__process-img {
+                        &::before {
+                            opacity: 0;
+                        }
+                    }
+                }
+                &:nth-child(3),
+                &:nth-child(5) {
+                    .l-index__process-img {
+                        &::before {
+                            opacity: 0;
+                            @include mobile() {
+                                opacity: 100%;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(5) {
+                    .l-index__process-img {
+                        &::after {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+            &-img {
+                font-family: "icomoon" !important;
+                -webkit-font-smoothing: antialiased;
+                @include flex(row, center, center);
+                &::before {
+                    content: "\e92c";
+                    font-size: 32px;
+                    color: $secondary;
+                    transform: translate(24px, 0px);
+                    opacity: 0;
+                }
+                &::after {
+                    content: "\e92c";
+                    font-size: 32px;
+                    color: $secondary;
+                    transform: translate(-24px, 0px);
+                }
+            }
+        }
+    }
+}

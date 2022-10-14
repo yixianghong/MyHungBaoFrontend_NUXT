@@ -1,0 +1,16 @@
+@import "vendor/bootstrap/functions";
+@import "base/variables"; //變數寫在這裡 初始就是來這邊改！
+@import "vendor/bootstrap/variables";
+@import "base/maps"; //Map寫在這裡
+@import "base/mixins"; //可查找的好用公式
+@import "vendor/bootstrap/mixins";
+
+// layout 針對頁面客製化的scss 新專案不用理
+@import "layout/main"; //頁面通用元件banner/navbar/slider...等等
+@import "layout/blog";
+@import "layout/contact";
+@import "layout/index";
+@import "layout/login";
+@import "layout/user";
+@import "layout/ckeckout";
+@import "layout/store";

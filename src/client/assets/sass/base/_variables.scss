@@ -1,0 +1,147 @@
+// ------------------- COLOR STYLE -------------------
+// 顏色色號改在這邊，再到下面theme地方改對應的顏色
+$blue: #0d6efd;
+$indigo: #4c789f;
+$purple: #6f42c1;
+$pink: #ce7e7e;
+$red: #dc3545;
+$orange: #fb7c54;
+$yellow: #ffc807;
+$green: #198754;
+$teal: #20c997;
+$cyan: #0dcaf0;
+$gold: #c6a96a;
+
+// 灰階
+$white: #fff;
+$gray-100: #f8f9fa; //bg-light
+$gray-200: #e9ecef;
+$gray-300: #d2d2d2; //line
+$gray-400: #ced4da;
+$gray-500: #b7c1cb; //light-gray
+$gray-600: #6c757d;
+$gray-700: #747474; //gray
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+// 麵包屑顏色
+$breadcrumb-active-color: #fff;
+
+// theme color
+$primary: $red;
+$secondary: $gold;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: $gray-100;
+$light-gray: $gray-500;
+$gray: $gray-700;
+$dark: $gray-900;
+
+// theme color 想新增什麼主題顏色就寫在這裡
+// ex:"gold"= $yellow 這樣之後就會有 text-gold, btn-gold 的顏色囉
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $cyan,
+    "info": $orange,
+    "warning": $yellow,
+    "danger": $red,
+    "indigo": $indigo,
+    "light": $light,
+    "light-gray": $light-gray,
+    "dark": $dark,
+    "gray": $gray,
+);
+
+// contrast 網頁最低對比度
+// 調這個數值就會讓按鈕的文字顏色根據你定義的對比度
+// 在白色/黑色之間變換喔。很神奇的！٩(◦`꒳´◦)۶
+// ps.最友善的對比度是4.5
+$min-contrast-ratio: 2.2;
+
+// $mark-bg: #fcf8e3;
+
+// ------------------- FONT STYLE -------------------
+// family 字型，只新增在"system-ui"前，且英文字型在前，中文在後。後面勿刪！
+$font-family-sans-serif: "Heebo", "Noto Sans TC", system-ui, -apple-system,
+    "Segoe UI", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+
+// weight 字重
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$headings-font-weight: 400;
+
+// size 尺寸
+$font-size-base: 1rem; //16px
+
+$h1-font-size: $font-size-base * 2.5; //40px
+$h2-font-size: $font-size-base * 2; //32px
+$h3-font-size: $font-size-base * 1.75; //28px
+$h4-font-size: $font-size-base * 1.5; //24px
+$h5-font-size: $font-size-base * 1.25; //20px
+$h6-font-size: $font-size-base;
+
+$font-size-lg: $font-size-base * 1.25; //20px
+$font-size-sm: $font-size-base * 0.875; //14px
+$font-size-xs: $font-size-base * 0.75; //12px
+
+// line height 行距
+$line-height-sm: 1.5;
+$line-height-base: 1.75;
+$line-height-lg: 2;
+$headings-line-height: 140%;
+
+// ------------------- RWD SETTING -------------------
+$container-max-widths: (
+    xs: 100%,
+    sm: 100%,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px,
+);
+
+// ------------------- SPACE STYLE -------------------
+// 此專案應用的是4的倍數，可以依據專案不同改成3的倍數/5的倍數
+// 因為模組的scss的間距皆是按比例寫的，所以改這邊的數值按鈕那邊就會一起調整
+$s1: 4px;
+$s2: 8px;
+$s3: 12px;
+$s4: 16px;
+$s5: 20px;
+$s6: 24px;
+$s7: 28px;
+$s8: 32px;
+$s9: 36px;
+$s10: 40px;
+$s12: 48px;
+$s16: 64px;
+$s20: 80px;
+$s30: 120px;
+$s40: 160px;
+$s50: 200px;
+
+// ------------------- POSITION -------------------
+$position-values: (
+    0: 0,
+    10: 10%,
+    15: 15%,
+    50: 50%,
+    100: 100%,
+);
+
+// ------------------- Dropdown -------------------
+$dropdown-min-width: 64px;
+
+//頁碼
+$pagination-bg: transparent;
+$pagination-border-radius: 0;
+$pagination-border-width: 0;
+$pagination-border-color: $gray-300;
+
+$border-style: dashed;
+$border-color: $gray-300;

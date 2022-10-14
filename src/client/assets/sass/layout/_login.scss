@@ -1,0 +1,25 @@
+.l {
+    &-login {
+        width: calc(100% - 48px);
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 0 0 $s50 0;
+        &__card {
+            @include rwd-padding($s10, $s6);
+            background-color: #fff;
+            border-radius: $s2;
+            .btn-link {
+                display: flex;
+                justify-content: center;
+                img {
+                    height: 30px;
+                }
+                @include media-breakpoint-down(md) {
+                    img {
+                        max-width: 48px;
+                    }
+                }
+            }
+        }
+    }
+}

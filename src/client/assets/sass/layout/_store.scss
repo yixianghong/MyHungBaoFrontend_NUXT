@@ -1,0 +1,17 @@
+.float-card.store {
+    .accordion-button {
+        padding: $s2;
+        &:not(.collapsed) {
+            color: $secondary;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            &::after {
+                color: $secondary;
+            }
+        }
+        &:focus {
+            border-color: transparent !important;
+            box-shadow: none !important;
+        }
+    }
+}

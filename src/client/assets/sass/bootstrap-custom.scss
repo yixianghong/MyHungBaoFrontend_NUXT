@@ -1,0 +1,26 @@
+// 一開始先在這邊載入google字型
+@import url("https://fonts.googleapis.com/css2?family=Heebo&family=Noto+Sans+TC:wght@400;500&family=Oswald:wght@400;700&display=swap");
+
+@import "vendor/bootstrap/functions";
+@import "base/variables"; //變數寫在這裡 初始就是來這邊改！
+@import "vendor/bootstrap/variables";
+@import "base/maps"; //Map寫在這裡
+@import "base/mixins"; //可查找的好用公式
+@import "vendor/bootstrap/maps";
+@import "vendor/bootstrap/mixins";
+@import "vendor/bootstrap/utilities";
+@import "base/utilities"; //新增的自訂class
+@import "vendor/bootstrap/bootstrap";
+
+// custom scss
+// base 全域都會用到的，字型、Container、Img等等
+@import "base/reset";
+@import "base/typographic";
+
+// module 會重複應用到的模組
+@import "module/button";
+@import "module/card";
+@import "module/form";
+@import "module/list";
+@import "module/modal";
+@import "module/nav";

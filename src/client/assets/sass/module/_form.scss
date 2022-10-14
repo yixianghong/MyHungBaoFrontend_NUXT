@@ -1,0 +1,17 @@
+.form-control {
+    @include rwd-padding($s2 $s2);
+}
+
+.form input.error {
+    border: 1px solid #d85d55 !important;
+    font-weight: 300;
+    color: #d85d55;
+}
+
+.form label.error {
+    color: #d85d55;
+    font-size: 0.875rem;
+    display: block;
+    // margin-top: -10px;
+    margin-bottom: 10px;
+}

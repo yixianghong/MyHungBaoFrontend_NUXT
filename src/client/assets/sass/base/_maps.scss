@@ -1,0 +1,12 @@
+//--space
+@for $i from 1 through 50 {
+    $spacer: 4px;
+    $spacers: map-merge(
+        $spacers,
+        (
+            $i: (
+                $spacer * $i,
+            ),
+        )
+    );
+}

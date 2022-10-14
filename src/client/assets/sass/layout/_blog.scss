@@ -1,0 +1,26 @@
+.l-blog {
+    &__year {
+        font-size: 1.25rem;
+        line-height: 100%;
+        @include mobile() {
+            font-size: 1rem !important;
+        }
+    }
+    &__date {
+        font-size: 2.5rem;
+        line-height: 100%;
+        @include media-breakpoint-down(lg) {
+            font-size: 1.25rem !important;
+            margin-bottom: $s3;
+        }
+        @include mobile() {
+            font-size: 1rem !important;
+        }
+    }
+}
+
+// .l-download__navbar {
+//     position: sticky;
+//     z-index: 1020;
+//     top: 120px;
+// }

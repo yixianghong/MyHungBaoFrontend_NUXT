@@ -1,0 +1,53 @@
+//--font-family
+.fa-osw {
+    font-family: "Oswald";
+    font-weight: 700;
+}
+
+//--font-weight
+.text-bold {
+    font-weight: 700;
+}
+
+//--letter-space
+.letter-space-lg {
+    letter-spacing: 0.2em;
+}
+.letter-space-sm {
+    letter-spacing: 0.1em;
+}
+//--text-style (文字外框)
+.text-stroke {
+    -webkit-text-stroke: 3px $primary;
+}
+
+//--font-size & weight
+.text-base {
+    &-r {
+        font-size: $font-size-base;
+    }
+    &-m {
+        font-size: $font-size-base;
+        font-weight: $font-weight-medium;
+    }
+}
+.text-sm {
+    &-r {
+        font-size: $font-size-sm;
+    }
+    &-m {
+        font-size: $font-size-sm;
+        font-weight: $font-weight-medium;
+    }
+}
+.text-xs {
+    font-size: $font-size-xs;
+    line-height: 100%;
+    &-r {
+        font-size: $font-size-xs;
+    }
+    &-m {
+        font-size: $font-size-xs;
+        font-weight: $font-weight-medium;
+    }
+}

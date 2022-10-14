@@ -1,0 +1,75 @@
+html {
+    @include mobile() {
+        font-size: 15px;
+    }
+}
+
+body {
+    font-family: $font-family-sans-serif;
+    line-height: 150%;
+    // background: url("~@/image/bg.jpg");
+}
+a {
+    color: $black;
+    text-decoration: none !important;
+    &:hover {
+        color: $black;
+        text-decoration: none;
+    }
+}
+p {
+    margin-bottom: 0;
+}
+img {
+    width: 100%;
+}
+
+.img-frame {
+    @include flex(row, center, center);
+    position: relative;
+    overflow: hidden;
+    border-radius: $s2;
+}
+
+.bg-img {
+    object-fit: cover !important;
+    object-position: 50% 50% !important;
+}
+
+.zindex--1 {
+    z-index: -1;
+}
+.zindex-10 {
+    z-index: 10;
+}
+
+// 容器
+.wrapper {
+    min-height: calc(100vh - 380px);
+    position: relative;
+}
+.container {
+    &-md {
+        padding: 0 $s10 !important;
+        width: 100%;
+        max-width: 1024px !important;
+        margin: 0 auto;
+        @include mobile() {
+            padding: 0 $s6 !important;
+        }
+    }
+}
+
+// 手機版d-none
+.mb-none {
+    @include mobile() {
+        display: none !important;
+    }
+}
+
+// 反白顏色
+::selection,
+::-moz-selection {
+    background: lighten($secondary, 20);
+    color: $dark;
+}

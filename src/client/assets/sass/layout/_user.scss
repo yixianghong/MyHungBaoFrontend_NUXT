@@ -1,0 +1,60 @@
+.l-user {
+    &__title {
+        display: flex;
+        @include flex(row, flex-start, center);
+        padding: $s12 0 $s5 0;
+        margin: 0 0 $s6 0;
+        border-style: none none dashed none !important;
+        border-color: $gray-300;
+        border-width: 1px;
+        h1 {
+            margin: 0;
+            padding: $s1 0 0 0;
+            color: $secondary;
+        }
+        i {
+            color: $secondary;
+            font-size: 32px;
+            margin: 0 $s2 0 0;
+        }
+    }
+    &__content {
+        .row {
+            margin-bottom: $s3;
+        }
+    }
+    &__notify-item {
+        &.active {
+            background-color: $gray-100;
+        }
+    }
+    &__order-item {
+        @include mobile() {
+            margin: $s4 0;
+            padding: $s4;
+            border-radius: $s2;
+            background-color: $gray-100;
+        }
+    }
+    &__order-navlink {
+        color: $gray-700;
+        border: none !important;
+        &.active,
+        &:focus,
+        &:hover {
+            background: none !important;
+            color: $secondary !important;
+            border: none !important;
+        }
+    }
+    &__design-item {
+        @include flex(row, space-between, flex-start);
+        border-bottom-style: 1px solid $gray-300;
+        flex-wrap: wrap;
+        @include mobile() {
+            background-color: $gray-100;
+            padding: $s2;
+            border-radius: $s1;
+        }
+    }
+}

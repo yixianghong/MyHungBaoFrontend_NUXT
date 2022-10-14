@@ -1,0 +1,204 @@
+//----Breakpoint
+@mixin desktop {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: 767.98px) {
+        @content;
+    }
+}
+
+//----Spacing : padding & margin
+// RWD的Padding & Margin
+// 一個逗號裡面可以放簡寫也可以放完整的數值，有null的可以為空值◝(　ﾟ∀ ﾟ )◟
+// padding/margin 寫法：上 右 下 左 ｜ 上下 左右 ｜ 上 左右 下 ｜ 上下左右
+// ex:@include rwd-spacing(100px 20px, 50px) 等於下面：
+// padding-top & bottom : 100px    |    padding-right & left : 20px
+// margin- top & bottom : 50px     |    margin- right & left : 50px
+@mixin rwd-spacing($p-lg, $m-lg, $p-sm: null, $m-sm: null) {
+    padding: $p-lg;
+    margin: $m-lg;
+    @include mobile() {
+        padding: $p-sm;
+        margin: $m-sm;
+    }
+}
+@mixin rwd-padding($p-lg, $p-sm: null) {
+    padding: $p-lg;
+    @include mobile() {
+        padding: $p-sm;
+    }
+}
+@mixin rwd-margin($m-lg, $m-sm: null) {
+    margin: $m-lg;
+    @include mobile() {
+        margin: $m-sm;
+    }
+}
+
+//----Boxing : width & heigh & radius & border
+// Box的大小
+// ex @include rwd-box(100px,200px)
+// width : 100px;
+// height: 200px;
+@mixin rwd-box($w-lg, $h-lg, $w-sm: null, $h-sm: null) {
+    width: $w-lg;
+    height: $h-lg;
+    @include mobile() {
+        width: $w-sm;
+        height: $h-sm;
+    }
+}
+// 正方形的BOX
+// ex @include rwd-sqbox(200px)
+// width : 200px;
+// height: 200px;
+@mixin rwd-sqbox($w-lg, $w-sm: null) {
+    width: $w-lg;
+    height: $w-lg;
+    @include mobile() {
+        width: $w-sm;
+        height: $w-sm;
+    }
+}
+// 圓角
+@mixin rwd-radius($radius-lg, $radius-sm: null) {
+    border-radius: $radius-lg;
+    @include mobile() {
+        border-radius: $radius-sm;
+    }
+}
+// 邊框
+@mixin rwd-border(
+    $size-lg,
+    $style-lg,
+    $color-lg,
+    $size-sm: null,
+    $style-sm: null,
+    $color-sm: null
+) {
+    border: $size-lg $style-lg $color-lg;
+    @include mobile() {
+        border: $size-sm $style-sm $color-sm;
+    }
+}
+
+//----Flex
+// ex @include flex(row, center, center, column, center, center);
+//    @include flex(方向, 主軸,    交錯軸, 方向,    主軸,    交錯軸);
+//    前三個是桌機版，後三個是手機版
+@mixin flex(
+    $direction,
+    $justify,
+    $align: null,
+    $direction-sm: null,
+    $justify-sm: null,
+    $align-sm: null
+) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    @include mobile() {
+        flex-direction: $direction-sm;
+        justify-content: $justify-sm;
+        align-items: $align-sm;
+    }
+}
+
+//----Position
+// ex @include absolute(0  , 0,     auto,   auto, 999);
+//    @include Position(Top, Right, Bottom, left, z-index);
+@mixin absolute($top, $right, $bottom: null, $left: null, $z-index: null) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}
+@mixin relative($top, $right, $bottom: null, $left: null, $z-index: null) {
+    position: relative;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}
+@mixin fixed($top, $right, $bottom: null, $left: null, $z-index: null) {
+    position: fixed;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}
+
+//----Typographic
+// ex @include font(48px, 400, 2, 12px, 700, 1);
+//    @include font(大小, 字重, 行距, 大小, 字重, 行距);
+//    前三個是桌機版，後三個是手機版
+@mixin font($fs-lg, $fw-lg, $lh-lg, $fs-sm: null, $fw-sm: null, $lh-sm: null) {
+    font-size: $fs-lg;
+    font-weight: $fw-lg;
+    line-height: $lh-lg;
+    @include mobile() {
+        font-size: $fs-sm;
+        font-weight: $fw-sm;
+        line-height: $lh-sm;
+    }
+}
+
+//----Button
+// 字體、底色為同一個顏色變化的按鈕樣式
+@mixin button-tag-variant(
+    $background,
+    $color,
+    $color-hover: color-contrast(rgba($color, 0.5)),
+    $active-background: $color,
+    $active-border: $color,
+    $active-color: color-contrast($active-background)
+) {
+    --#{$prefix}btn-bg: #{$background};
+    --#{$prefix}btn-color: #{$color};
+    --#{$prefix}btn-border-color: transparent;
+    --#{$prefix}btn-hover-color: #{$color-hover};
+    --#{$prefix}btn-hover-bg: #{$active-background};
+    --#{$prefix}btn-hover-border-color: #{$active-border};
+    --#{$prefix}btn-focus-shadow-rgb: #{to-rgb($color)};
+    --#{$prefix}btn-active-color: #{$active-color};
+    --#{$prefix}btn-active-bg: #{$active-background};
+    --#{$prefix}btn-active-border-color: #{$active-border};
+    --#{$prefix}btn-active-shadow: #{$btn-active-box-shadow};
+    --#{$prefix}btn-disabled-color: #{$color};
+    --#{$prefix}btn-disabled-bg: transparent;
+    --#{$prefix}gradient: none;
+}
+
+// 像Link(底色為透明) 的按鈕樣式
+@mixin button-btnlink-variant(
+    $color,
+    $btn-link-hover-color: darken($color, 20%)
+) {
+    --#{$prefix}btn-font-weight: #{$font-weight-normal};
+    --#{$prefix}btn-color: #{$color};
+    --#{$prefix}btn-bg: transparent;
+    --#{$prefix}btn-border-color: transparent;
+    --#{$prefix}btn-hover-color: #{$btn-link-hover-color};
+    --#{$prefix}btn-hover-border-color: transparent;
+    --#{$prefix}btn-active-border-color: transparent;
+    --#{$prefix}btn-disabled-color: #{$btn-link-disabled-color};
+    --#{$prefix}btn-disabled-border-color: transparent;
+    --#{$prefix}btn-box-shadow: none;
+
+    text-decoration: none !important;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    // No need for an active state here
+}

@@ -1,0 +1,260 @@
+// Slider
+.swiper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    &-slide {
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        img {
+            display: block;
+            width: 100%;
+            max-height: 650px;
+            object-fit: cover;
+        }
+    }
+
+    &-button {
+        &-next,
+        &-prev {
+            width: 60px;
+            height: 60px;
+            background-color: #000;
+            border-radius: 50%;
+            transition: all 400ms ease;
+            @include mobile() {
+                display: none;
+            }
+            &::after {
+                color: white;
+                font-size: 16px;
+            }
+            &:hover {
+                background-color: $secondary;
+            }
+        }
+        &-next {
+            right: 40px;
+        }
+        &-prev {
+            left: 40px;
+        }
+    }
+
+    &-pagination {
+        &-bullet {
+            width: 30px;
+            border-radius: 0;
+            background: white;
+            opacity: 100%;
+            height: 5px;
+            &-active {
+                background: $secondary;
+            }
+        }
+    }
+}
+
+// Navbar-TOP
+.navbar {
+    &-nav {
+        .nav-link {
+            color: $gray-600;
+            padding: $s2;
+        }
+    }
+    &-brand {
+        @include media-breakpoint-down(xl) {
+            max-width: 120px;
+        }
+    }
+    &-toggler.d-xl-none {
+        border: none;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+// Navbar-Left
+.l-aside {
+    padding: $s12 0 0 0;
+    border-style: none dashed none none !important;
+    border-color: $gray-300;
+    border-width: 1px;
+    ul {
+        margin: 0 auto;
+        list-style-type: none;
+        padding: 0;
+        max-width: 100px;
+    }
+    .nav-link-row {
+        color: $gray-600;
+        &:hover {
+            color: $secondary;
+        }
+    }
+    @include mobile() {
+        overflow: visible;
+        width: 100%;
+        padding: 0;
+        box-shadow: 0px 4px 10px #00000010;
+        ul {
+            margin: 0;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            overflow-x: scroll;
+            max-width: none;
+            // scrollbar display none
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            li {
+                flex-shrink: 0;
+                margin: 0 20px;
+            }
+        }
+    }
+}
+
+// Navlink
+.nav-link {
+    color: $primary;
+    &:hover,
+    &:focus {
+        color: darken($primary, 20);
+    }
+    &.active {
+        background-color: $primary !important;
+    }
+    //上下排列
+    &-col {
+        @include flex(column, center, center);
+        &:hover,
+        &:active,
+        &.active {
+            color: $primary;
+        }
+        i {
+            margin: 0 0 8px 0;
+        }
+    }
+    //左右排列
+    &-row {
+        @include flex(row, flex-start, center);
+        flex-grow: 1;
+        &:hover,
+        &:active,
+        &.active {
+            color: $secondary;
+        }
+        i {
+            margin: 0 4px 0 0;
+            font-size: 24px;
+        }
+        p {
+            padding: 2px 0 0 0;
+        }
+    }
+    // 只有icon
+    &-icon {
+        @include rwd-padding(4px 12px);
+        position: relative;
+        line-height: 100% !important;
+        color: $primary;
+        &:hover,
+        &:active,
+        &:focus,
+        &.active {
+            color: darken($primary, 0.2);
+            border: none;
+        }
+        // icon
+        i {
+            font-size: 32px;
+        }
+        // 右上角數字
+        .number {
+            @include rwd-sqbox(20px);
+            border-radius: 50%;
+            @include flex(column, center, center);
+            @include absolute(0, 0, auto, auto, 1);
+            font-size: 0.75rem;
+            text-align: center;
+            color: $black;
+            background-color: $yellow;
+        }
+        // 登入區塊
+        &.login {
+            @include flex(row, space-between, center);
+            min-width: 135px;
+        }
+    }
+}
+// Footer
+footer {
+    img {
+        width: auto;
+        max-height: 80px;
+    }
+}
+// Modal
+.modal {
+    &-header,
+    &-footer {
+        border: none !important;
+    }
+}
+
+// Form
+.required::before {
+    content: "*";
+    color: red;
+}
+
+// label.required::after {
+//     content: "* ";
+//     color: red;
+// }
+//Banner
+.l-banner {
+    height: 100%;
+    overflow: hidden;
+    max-height: 300px;
+    object-position: 50% 50%;
+}
+
+// horizontal-nav
+.l-horizontal-nav {
+    padding: $s5;
+    @include flex(row, center, center);
+    flex-wrap: nowrap;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    .nav.nav-pills {
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+    .nav-item {
+        flex: 0 0 auto !important;
+    }
+}
